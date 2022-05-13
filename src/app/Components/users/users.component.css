@@ -1,0 +1,9 @@
+.users {
+  background-color: red;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
