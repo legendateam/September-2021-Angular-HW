@@ -8,8 +8,7 @@ import { IComment } from '../../Interfaces';
 })
 export class CommentComponent implements OnInit {
   @Input()
-  // @ts-ignore
-      comment: IComment = {};
+  comment: IComment;
 
   constructor() { }
 

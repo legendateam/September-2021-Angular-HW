@@ -11,8 +11,7 @@ import { IUser } from '../../Interfaces';
 })
 export class UserComponent implements OnInit {
   @Input()
-    // @ts-ignore
-      user: IUser = {};
+  user: IUser = {};
 
   constructor() { }
 

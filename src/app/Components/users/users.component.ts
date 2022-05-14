@@ -9,7 +9,7 @@ import { UserService } from '../../Services';
     styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-    users: IUser[] = [];
+    users: IUser[];
 
     constructor(private userService: UserService) {
     }
