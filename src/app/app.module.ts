@@ -4,29 +4,29 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {
-    CommentComponent,
-    CommentsComponent,
-    PostComponent,
-    PostsComponent,
-    UserComponent,
-    UsersComponent,
-} from './Components';
+  CommentComponent,
+  CommentsComponent,
+  PostComponent,
+  PostsComponent,
+  UserComponent,
+  UsersComponent,
+} from './components';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        CommentComponent,
-        UsersComponent,
-        UserComponent,
-        PostComponent,
-        PostsComponent,
-        CommentsComponent,
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    CommentComponent,
+    UsersComponent,
+    UserComponent,
+    PostComponent,
+    PostsComponent,
+    CommentsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
