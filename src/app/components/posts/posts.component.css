@@ -1,0 +1,9 @@
+.main__posts{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.main__post, .main__posts_details {
+  width: 400px;
+}

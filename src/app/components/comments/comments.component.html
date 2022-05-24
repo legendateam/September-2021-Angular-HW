@@ -1,0 +1,11 @@
+<div [className]="'main__comments'">
+
+  <div [className]="'main__comments_comment'">
+    <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+  </div>
+
+  <div [className]="'main__comments_wrap_details'">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

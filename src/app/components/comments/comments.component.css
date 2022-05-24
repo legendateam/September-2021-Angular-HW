@@ -1,0 +1,8 @@
+.main__comments{
+  display: flex;
+  justify-content: center;
+}
+
+.main__comments_comment,.main__comments_wrap_details {
+  width: 500px;
+}

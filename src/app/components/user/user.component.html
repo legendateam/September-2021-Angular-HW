@@ -1,0 +1,3 @@
+<div [className]="'main__users_user'">
+  <p>{{user.id}}. {{user.name}} <a [routerLink]="[user.id]" [state]="{ data: user }">details</a></p>
+</div>
