@@ -1,9 +1,4 @@
-.main__users_wrap {
+.users {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.main__users_wrap-user, .main__users_details{
-  width: 300px;
+  justify-content: space-around;
 }

@@ -1,12 +1,11 @@
-<div [className]="'main__users_wrap'">
+<div class="users">
 
-  <div [className]="'main__users_wrap-user'">
+  <div class="wrap__left">
     <app-user *ngFor="let user of users" [user]="user"></app-user>
   </div>
 
-  <div [className]="'main__users_details'">
+  <div class="wrap__right">
     <router-outlet></router-outlet>
   </div>
 
 </div>
-

@@ -1,9 +1,7 @@
-<div [className]="'main__comments_details'">
-  <ul>
-    <li>id: {{comment?.id}}</li>
-    <li>name: {{comment?.name}}</li>
-    <li>email: {{comment?.email}}</li>
-    <li>body: {{comment?.body}}</li>
-    <li>postId: {{comment?.postId}}</li>
-  </ul>
-</div>
+<ul *ngIf="comment">
+  <li>id: {{comment.id}}</li>
+  <li>name: {{comment.name}}</li>
+  <li>postId: {{comment.postId}}</li>
+  <li>bodY: {{comment.body}}</li>
+  <li>email: {{comment.email}}</li>
+</ul>

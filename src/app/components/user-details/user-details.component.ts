@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { IState, IUser } from '../../interfaces';
 import { UserService } from '../../services';
+import { IUser } from '../../interfaces';
+import { StateEnum } from '../../enum';
 
 @Component({
   selector: 'app-user-details',
@@ -12,18 +13,18 @@ import { UserService } from '../../services';
 export class UserDetailsComponent implements OnInit {
   userDetails: IUser;
 
-  constructor(private activatedRouter: ActivatedRoute, private userService: UserService) { }
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private usersService: UserService) { }
 
   ngOnInit(): void {
     this.activatedRouter.params.subscribe(({ id }) => {
-      const { state: { data: user } } = history as IState<IUser>;
+      const userOfState = this.router.getCurrentNavigation()?.extras?.state?.[StateEnum.USER] as IUser;
 
-      if (!user) {
-        this.userService.getOneById(id).subscribe((user) => this.userDetails = user);
+      if (userOfState) {
+        this.userDetails = userOfState;
         return;
       }
 
-      this.userDetails = user;
+      this.usersService.getOneById(id).subscribe((user) => this.userDetails = user);
     });
   }
 }

@@ -3,20 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { IPost } from '../interfaces';
-import { urls } from '../constants';
-import { ParamsEnum } from '../enum';
+import { environment } from '../../environments/environment';
+import { urls } from '../constants/urls.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public getAll(): Observable<IPost[]> {
-    return this.httpClient.get<IPost[]>(`${urls.baseURL}${ParamsEnum.posts}`);
+    return this.http.get<IPost[]>(environment.api + urls.posts);
   }
 
   public getOneById(id: string): Observable<IPost> {
-    return this.httpClient.get<IPost>(`${urls.baseURL}${ParamsEnum.posts}/${id}`);
+    return this.http.get<IPost>(`${environment.api + urls.posts}/${id}`);
   }
 }

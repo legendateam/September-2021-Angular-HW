@@ -1,10 +1,10 @@
-<div [className]="'main__posts'">
+<div class="posts">
 
-  <div [className]="'main__post'">
+  <div class="wrap__left">
     <app-post *ngFor="let post of posts" [post]="post"></app-post>
   </div>
 
-  <div [className]="'main__posts_details'">
+  <div class="wrap__right">
     <router-outlet></router-outlet>
   </div>
 

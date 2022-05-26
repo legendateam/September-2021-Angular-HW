@@ -1,11 +1,10 @@
-<div [className]="'main__comments'">
+<div class="comments">
 
-  <div [className]="'main__comments_comment'">
+  <div class="wrap__left">
     <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
   </div>
 
-  <div [className]="'main__comments_wrap_details'">
+  <div class="wrap__right">
     <router-outlet></router-outlet>
   </div>
-
 </div>

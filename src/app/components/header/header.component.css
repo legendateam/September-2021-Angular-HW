@@ -1,0 +1,7 @@
+header ul {
+  display: flex;
+  justify-content: space-evenly;
+  height: 75px;
+  background-color: rosybrown;
+  align-items: center;
+}

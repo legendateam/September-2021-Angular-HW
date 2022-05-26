@@ -3,3 +3,21 @@
   margin: 0;
   padding: 0;
 }
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.active a{
+  color: red;
+}
+
+.wrap__left, .wrap__right {
+  width: 400px;
+}
+

@@ -1,3 +1,5 @@
-export interface IState<T> extends History{
-  state: { data: T }
+import { MyKey } from '../types';
+
+export interface IState<T> {
+  data: Record<MyKey, T>
 }

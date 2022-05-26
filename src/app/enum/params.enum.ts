@@ -1,5 +1,6 @@
 export enum ParamsEnum {
-  users = '/users',
-  posts = '/posts',
-  comments = '/comments'
+  USERS = 'users',
+  POSTS = 'posts',
+  COMMENTS = 'comments',
+  DETAILS = 'details'
 }

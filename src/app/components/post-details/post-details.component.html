@@ -1,7 +1,6 @@
-<div [className]="'main__posts_details'">
-  <ul>
-    <li>id: {{post.id}} - userId: {{post.userId}}</li>
-    <li>title: {{post.title}}</li>
-    <li>body: {{post.body}}</li>
-  </ul>
-</div>
+<ul *ngIf="post">
+  <li>id.{{post.id}}</li>
+  <li>title.{{post.title}}</li>
+  <li>userId.{{post.userId}}</li>
+  <li>body.{{post.body}}</li>
+</ul>

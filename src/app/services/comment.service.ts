@@ -2,21 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { IComment } from '../interfaces';
-import { urls } from '../constants';
-import { ParamsEnum } from '../enum';
+import { environment } from '../../environments/environment';
+import { IComment } from '../interfaces/comment.interface';
+import { urls } from '../constants/urls.constants';
+import { SymbolEnum } from '../enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommentService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public getAll() : Observable<IComment[]> {
-    return this.httpClient.get<IComment[]>(`${urls.baseURL}${ParamsEnum.comments}`);
+  public getAll(): Observable<IComment[]> {
+    return this.http.get<IComment[]>(`${environment.api}${urls.comments}`);
   }
 
-  public getOneByID(id: string) : Observable<IComment> {
-    return this.httpClient.get<IComment>(`${urls.baseURL}${ParamsEnum.comments}/${id}`);
+  public getOneById(id: string): Observable<IComment> {
+    return this.http.get<IComment>(`${environment.api}${urls.comments}${SymbolEnum.SLASH}${id}`);
   }
 }

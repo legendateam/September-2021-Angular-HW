@@ -1,12 +1,11 @@
-<div>
+<div *ngIf="userDetails">
   <ul>
-    <li>id: {{userDetails.id}}</li>
-    <li>name: {{userDetails.name}}</li>
-    <li>email: {{userDetails.email}}</li>
-    <li>phone: {{userDetails.phone}}</li>
-    <li>website: {{userDetails.website}}</li>
-    <li>companyName: {{userDetails.company.name}}</li>
-    <li>city: {{userDetails.address.city}}</li>
-    <li>street: {{userDetails.address.street}}</li>
+    <li>id.{{userDetails.id}}</li>
+    <li>name - {{userDetails.name}}</li>
+    <li>username - {{userDetails.username}}</li>
+    <li>address street - {{userDetails.address.street}}</li>
+    <li>company name - {{userDetails.company.name}}</li>
+    <li>website - {{userDetails.website}}</li>
+    <li>phone - {{userDetails.phone}}</li>
   </ul>
 </div>

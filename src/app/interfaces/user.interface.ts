@@ -1,8 +1,8 @@
+import { ICommonFields } from './common-fields.interface';
 import { IAddress } from './address.interface';
 import { ICompany } from './company.interface';
-import { ICommonFields } from './common-fields.interface';
 
-export interface IUser extends ICommonFields {
+export interface IUser extends ICommonFields{
   name: string,
   username: string,
   email: string,

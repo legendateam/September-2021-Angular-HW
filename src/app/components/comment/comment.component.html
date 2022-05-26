@@ -1,4 +1,3 @@
-<div>
-  {{comment.id}} - {{comment.name}}
-  <button (click)="getDetails({ data: comment })">comment details</button>
+<div routerLinkActive="active">
+  <p>{{comment.id}} - <a [routerLink]="[comment.id]" [state]="{ comment }">{{comment.name}}</a></p>
 </div>
