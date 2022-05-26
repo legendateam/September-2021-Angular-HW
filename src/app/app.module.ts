@@ -6,7 +6,6 @@ import { LoyaoutComponent } from './components/loyaout/loyaout.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
-import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],
