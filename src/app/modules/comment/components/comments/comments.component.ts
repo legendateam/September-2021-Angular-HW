@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+
+import {IComment} from "../../interfaces";
 
 @Component({
   selector: 'app-comments',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  comments: IComment[];
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe( ({commentsData}) => this.comments = commentsData)
   }
 
 }

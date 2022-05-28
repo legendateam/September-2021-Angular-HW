@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import {
   Resolve,
   RouterStateSnapshot,
-  ActivatedRouteSnapshot
+  ActivatedRouteSnapshot,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import {IUser, IUserDetails} from "../../interfaces";
+import {IUserDetails} from "../../interfaces";
 import {UserService} from "../user.service";
 
 @Injectable({
@@ -19,8 +19,12 @@ export class UserResolver implements Resolve<IUserDetails> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
     Observable<IUserDetails> | Promise<IUserDetails> | IUserDetails {
+
+    // ddos server
+
     const { id } = route.params;
     return this.userService.getOne(id)
+
   }
 
 }

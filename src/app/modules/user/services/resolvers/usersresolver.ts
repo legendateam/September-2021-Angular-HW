@@ -18,6 +18,7 @@ export class UsersResolver implements Resolve<IUser[]> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IUser[]> | Promise<IUser[]> | IUser[] {
+    // ddos server
     return this.userService.getAll()
   }
 }

@@ -1,1 +1,11 @@
-<p>posts works!</p>
+<div class="posts">
+
+  <ul class="left-side">
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+  </ul>
+
+  <div class="right-side">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

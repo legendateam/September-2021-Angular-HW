@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+
+import {IComment} from "../../interfaces";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-comment',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  comment: IComment;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
+  getCommentDetails(comment: IComment) {
+    this.router.navigate([comment.id], { relativeTo: this.activatedRoute, state: { comment: this.comment } })
+  }
 }
