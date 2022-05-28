@@ -1,7 +1,8 @@
 header ul {
   display: flex;
-  justify-content: space-evenly;
-  height: 75px;
-  background-color: rosybrown;
+  justify-content: space-between;
+  padding: 0 20%;
   align-items: center;
+  height: 70px;
+  background-color: rosybrown;
 }

@@ -1,30 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoyaoutComponent } from './components/loyaout/loyaout.component';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
+import {MainLayoutsComponent} from "./layouts/main-layouts/main-layouts.component";
+import {ErrorPageComponent} from "./components/error-page/error-page.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  {
-    path: 'home',
-    component: LoyaoutComponent,
-    children: [
-      {
-        path: 'users',
-        loadChildren: () => import('./components/users/users.module').then(mod => mod.UsersModule),
-      },
-      {
-        path: 'posts',
-        loadChildren: () => import('./components/posts/posts.module').then(mod => mod.PostsModule),
-      },
-      {
-        path: 'comments',
-        loadChildren: () => import('./components/comments/comments.module').then(mod => mod.CommentsModule),
-      },
-    ],
+  { path: 'home', component: MainLayoutsComponent, children: [
+      { path: 'users', loadChildren: () => import('./modules/user/user.module').then(mod => mod.UserModule) },
+      { path: 'posts', loadChildren: () => import('./modules/post/post.module').then(mod => mod.PostModule) },
+      { path: 'comments', loadChildren: ()=> import('./modules/comment/comment.module').then(mod => mod.CommentModule) }
+    ]
   },
-  { path: '**', component: ErrorPageComponent },
+  { path: '**', component: ErrorPageComponent }
 ];
 
 @NgModule({
