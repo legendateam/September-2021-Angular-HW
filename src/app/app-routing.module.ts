@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {MainLayoutsComponent} from "./layouts/main-layouts/main-layouts.component";
-import {ErrorPageComponent} from "./components/error-page/error-page.component";
+import {ErrorPageComponent} from "./components";
+import {MainLayoutsComponent} from "./main-layouts";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: MainLayoutsComponent, children: [
-      { path: 'users', loadChildren: () => import('./modules/user/user.module').then(mod => mod.UserModule) },
-      { path: 'posts', loadChildren: () => import('./modules/post/post.module').then(mod => mod.PostModule) },
-      { path: 'comments', loadChildren: ()=> import('./modules/comment/comment.module').then(mod => mod.CommentModule) }
+  { path: '', component: MainLayoutsComponent, children: [
+      { path: 'login', loadChildren: () => import('./modules/login/login.module').then(mod => mod.LoginModule) },
+      { path: 'registration', loadChildren: () => import('./modules/registration/registration.module').then(mod => mod.RegistrationModule) },
+      { path: 'cars', loadChildren: () => import('./modules/car/car.module').then(mod => mod.CarModule) }
     ]
   },
   { path: '**', component: ErrorPageComponent }

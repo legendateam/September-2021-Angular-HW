@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {HomePageComponent} from "./components/home-page/home-page.component";
-import {MainLayoutsComponent} from "./layouts/main-layouts/main-layouts.component";
-import {ErrorPageComponent} from "./components/error-page/error-page.component";
-import {HeaderComponent} from "./components/header/header.component";
 import {AppRoutingModule} from "./app-routing.module";
+import {MainLayoutsComponent} from "./main-layouts";
+import {ErrorPageComponent, HeaderComponent, LogoComponent} from "./components";
 
 @NgModule({
   declarations: [
@@ -14,11 +12,11 @@ import {AppRoutingModule} from "./app-routing.module";
     HeaderComponent,
     ErrorPageComponent,
     MainLayoutsComponent,
-    HomePageComponent,
+    LogoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
