@@ -20,15 +20,19 @@ export class CarService {
     return this.http.get<ICar>(`${urls.cars}/${id}`)
   }
 
-  public patchingOne(id: string, pathingCar: Partial<ICar>): Observable<ICar> {
-    return this.http.patch<ICar>(`${urls.cars}/${id}`, pathingCar)
+  public createOne(car: ICar): Observable<ICar> {
+    return this.http.post<ICar>(urls.cars, car)
   }
 
-  public fullUpdateOne(id: string, newCar: ICar): Observable<ICar> {
-    return this.http.put<ICar>(`${urls.cars}/${id}`, newCar)
+  public fullUpdateOne(id: number, newCar: ICar): Observable<ICar> {
+    return this.http.patch<ICar>(`${urls.cars}/${id}`, newCar)
   }
 
-  public deleteOne(id: string): void {
-    this.http.delete(`${urls.cars}/${id}`)
+  public updateOne(id: number, pathingCar: Partial<ICar>): Observable<ICar> {
+    return this.http.put<ICar>(`${urls.cars}/${id}`, pathingCar)
+  }
+
+  public deleteOne(id: number): Observable<any> {
+    return this.http.delete(`${urls.cars}/${id}`)
   }
 }
