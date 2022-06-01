@@ -28,7 +28,10 @@ export class FormCreateComponent implements OnInit {
     this.formService.updateClick = false;
     this.carService.createOne(this.car).pipe(
       catchError((err) => throwError(this.error = err.error.details)),
-    ).subscribe((car) => this.activatedRoute.data.subscribe(({ dataCars }) => dataCars.push(car)));
+    ).subscribe((car) => this.activatedRoute.data.subscribe(({ dataCars }) => {
+      dataCars.push(car);
+      this.formService.form.reset()
+    }));
   }
 
   public updateCar(): void {

@@ -27,10 +27,6 @@ export class FormService {
 
   public update(car: ICar): void {
     this.id = car.id as number;
-    this.form = new FormGroup({
-      model: new FormControl(car.model, [Validators.required, Validators.minLength(2)]),
-      year: new FormControl(car.year, [Validators.required, Validators.min(1990), Validators.max(new Date().getUTCFullYear())]),
-      price: new FormControl(car.price, [Validators.required, Validators.min(1)]),
-    });
+    this.form.setValue({model: car.model, year: car.year, price: car.price})
   }
 }
