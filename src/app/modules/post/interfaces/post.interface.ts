@@ -1,4 +1,4 @@
-import {ICommonFields} from "../../../interfaces/common-fields.interface";
+import { ICommonFields } from '../../../interfaces/common-fields.interface';
 
 export interface IPost extends ICommonFields{
   userId: number,

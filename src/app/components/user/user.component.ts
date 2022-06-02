@@ -1,18 +1,20 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {
+  Component, EventEmitter, Input, OnInit, Output,
+} from '@angular/core';
 
-import {IUser} from "../../interfaces/user.interface";
+import { IUser } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-
   @Input()
-  user: IUser;
+    user: IUser;
+
   @Output()
-  userEvent = new EventEmitter<IUser>();
+    userEvent = new EventEmitter<IUser>();
 
   constructor() { }
 
@@ -20,7 +22,6 @@ export class UserComponent implements OnInit {
   }
 
   emmit() {
-    this.userEvent.emit(this.user)
+    this.userEvent.emit(this.user);
   }
-
 }
