@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { MainLayoutsComponent } from './main-layouts';
-import { ErrorPageComponent, HeaderComponent, LogoComponent } from './components';
+import { UsersComponent } from './components/users/users.component';
+import { UserComponent } from './components/user/user.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ErrorPageComponent,
-    MainLayoutsComponent,
-    LogoComponent,
+    UsersComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],

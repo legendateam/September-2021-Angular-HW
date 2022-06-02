@@ -1,6 +1,7 @@
-import { ICommonFields } from './common-fields.interface';
+import {ICommonFields} from "./common-fields.interface";
 
 export interface IUser extends ICommonFields{
+  name: string,
   username: string,
-  password: string
+  email: string
 }

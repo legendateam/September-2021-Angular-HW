@@ -1,7 +1,0 @@
-<form [formGroup]="formService.form">
-  <div><label>Model:<input type="text" formControlName="model"></label></div>
-  <div><label>Year:<input type="number" formControlName="year"></label></div>
-  <div><label>Price:<input type="number" formControlName="price"></label></div>
-  <button [disabled]="formService.form.invalid" (click)="createCar()">CREATE</button>
-  <button [disabled]="formService.form.invalid" *ngIf="formService.updateClick" (click)="updateCar()">UPDATE</button>
-</form>
